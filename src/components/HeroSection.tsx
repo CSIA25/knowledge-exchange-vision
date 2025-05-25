@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import Tilt from 'react-tilt';
+import { Tilt } from 'react-parallax-tilt';
 
 export const HeroSection = () => {
   return (
@@ -14,12 +13,12 @@ export const HeroSection = () => {
               key={i}
               className="absolute w-2 h-2 bg-royal-blue/20 rounded-full"
               initial={{ 
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
+                x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
+                y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
               }}
               animate={{
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
+                x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
+                y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
               }}
               transition={{
                 duration: 10 + Math.random() * 10,
@@ -65,7 +64,7 @@ export const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <Tilt options={{ max: 15, speed: 400 }}>
+            <Tilt tiltMaxAngleX={15} tiltMaxAngleY={15} transitionSpeed={400}>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -76,6 +75,7 @@ export const HeroSection = () => {
             </Tilt>
           </motion.div>
 
+          
           <motion.div
             className="flex justify-center space-x-12 pt-12"
             initial={{ opacity: 0 }}
@@ -102,7 +102,7 @@ export const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Floating Elements */}
+      
       <motion.div
         className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-electric-cyan to-royal-blue rounded-full opacity-20"
         animate={{ y: [-20, 20, -20] }}

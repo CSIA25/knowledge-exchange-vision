@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import Tilt from 'react-tilt';
+import { Tilt } from 'react-parallax-tilt';
 import { BookOpen, Award, Users } from 'lucide-react';
 
 const services = [
@@ -53,7 +52,7 @@ export const ServiceCards = () => {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <Tilt options={{ max: 15, speed: 400 }}>
+              <Tilt tiltMaxAngleX={15} tiltMaxAngleY={15} transitionSpeed={400}>
                 <motion.div
                   whileHover={{ y: -10 }}
                   className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 h-full"
