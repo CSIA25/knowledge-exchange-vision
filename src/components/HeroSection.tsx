@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Tilt } from 'react-parallax-tilt';
+import Tilt from 'react-parallax-tilt';
 
 export const HeroSection = () => {
   return (
